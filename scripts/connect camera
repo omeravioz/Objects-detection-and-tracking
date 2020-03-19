@@ -1,0 +1,20 @@
+mkdir ~/omer_ws
+cd omer_ws/
+git clone git@gitsvn-nt.oru.se:amici/point-cloud-rig.git src
+cd src
+git submodule update --init --recursive
+cd ..
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+source devel/setup.bash
+roslaunch camera_tf_publisher realsense_tf_publisher.launch 
+cd omer_ws/src/camera_tf_publisher/launch/
+ll
+ cs ..
+
+
+
+ASUS camera 
+
+roslaunch camera_tf_publisher camera_tf_publisher.launch 
+
+rviz
